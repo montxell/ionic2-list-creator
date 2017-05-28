@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+// Services
+import { ListService } from './services/list.service';
+
+
+// Components / pages
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { PendingsComponent } from '../pages/pendings/pendings.component';
@@ -31,6 +36,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DoneComponent
   ],
   providers: [
+    ListService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

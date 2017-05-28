@@ -12,7 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { PendingsComponent } from '../pages/pendings/pendings.component';
 import { DoneComponent } from '../pages/done/done.component';
-
+import { AddComponent } from '../pages/add/add.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TabsPage,
     PendingsComponent,
-    DoneComponent
+    DoneComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TabsPage,
     PendingsComponent,
-    DoneComponent
+    DoneComponent,
+    AddComponent
   ],
   providers: [
     ListService,

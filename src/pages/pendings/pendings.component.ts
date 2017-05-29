@@ -12,12 +12,12 @@ import { AddComponent } from '../add/add.component';
 export class PendingsComponent implements OnInit {
 
   constructor( private _listService: ListService,
-               private navController: NavController) {  }
+               private navCtrl: NavController) {  }
 
   ngOnInit() {}
 
   goAdd() {
-    this.navController.push( AddComponent )
+    this.navCtrl.push( AddComponent )
   }
 
 

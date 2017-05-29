@@ -21,14 +21,57 @@
     <ion-card-content>
 
       <ion-item>
-        <ion-label floating>Item:</ion-label>
-        <ion-input type="text" [(ngModel)]="itemName" name="itemName"></ion-input>
+        <ion-label floating>Item</ion-label>
+        <ion-input (keyup.enter)="addItem()"
+          type="text" [(ngModel)]="itemName" name="itemName"></ion-input>
       </ion-item>
 
-      <button ion-button>Añadir (Add)</button>
+      <button (click)="addItem()"
+        ion-button class="button-block">
+        Añadir item (Add item)
+      </button>
 
     </ion-card-content>
 
   </ion-card>
+
+
+  <!-- ITEMS -->
+
+  <ion-card *ngIf="items.length > 0">
+
+    <ion-card-header>
+      <h3>Items añadidos (Added items)</h3>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-list>
+
+        <ion-item *ngFor="let item of items; let i = index">
+
+          <button ion-button color="dark" clear style="text-transform: none">
+            {{ item.name }}
+          </button>
+
+          <button (click)="deleteItem(i)"
+            ion-button outline item-right color="danger">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            Borrar (Delete)
+          </button>
+
+        </ion-item>
+
+      </ion-list>
+
+    </ion-card-content>
+
+
+  </ion-card>
+
+  <button ion-button icon-left class="button-block">
+    <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+    Añadir lista (Add list)
+  </button>
 
 </ion-content>

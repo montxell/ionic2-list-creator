@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'add.component.html',
 })
 export class AddComponent implements OnInit {
+
+  listName:string;
+  itemName:string;
+  
   constructor() {  }
 
   ngOnInit() {}

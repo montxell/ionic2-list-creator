@@ -6,6 +6,8 @@ import { MyApp } from './app.component';
 // Services
 import { ListService } from './services/list.service';
 
+// Pipes
+import { PlaceHolderPipe } from './pipes/placeholder.pipe';
 
 // Components / pages
 import { TabsPage } from '../pages/tabs/tabs';
@@ -20,6 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    PlaceHolderPipe,
     TabsPage,
     PendingsComponent,
     DoneComponent,

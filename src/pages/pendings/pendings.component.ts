@@ -4,6 +4,7 @@ import { ListService } from '../../app/services/list.service';
 
 import { NavController } from 'ionic-angular';
 import { AddComponent } from '../add/add.component';
+import { DetailComponent } from '../detail/detail.component';
 
 @Component({
   selector: 'app-pendings',
@@ -18,6 +19,11 @@ export class PendingsComponent implements OnInit {
 
   goAdd() {
     this.navCtrl.push( AddComponent )
+  }
+
+
+  seeDetail( list, index ) {
+    this.navCtrl.push( DetailComponent, { list, index } );
   }
 
 

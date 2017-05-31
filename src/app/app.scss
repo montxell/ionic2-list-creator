@@ -16,7 +16,15 @@
 // automatically applied to the <body> element in the app.
 
 
+h2 {
+    color: white !important;
+}
+
 // Adding a space after an icon globablly
 ion-icon {
   margin-right: 5px;
+}
+
+.text-center {
+  text-align: center;
 }

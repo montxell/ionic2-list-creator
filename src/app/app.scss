@@ -16,9 +16,7 @@
 // automatically applied to the <body> element in the app.
 
 
-h2 {
-    color: white !important;
-}
+// GLOBAL STYLES
 
 // Adding a space after an icon globablly
 ion-icon {
@@ -27,4 +25,23 @@ ion-icon {
 
 .text-center {
   text-align: center;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+
+// COMPONENT STYLES
+
+app-pendings {
+  h2 {
+      color: white !important;
+  }
+}
+
+app-detail {
+  ion-icon {
+    margin-right: 0px !important;
+  }
 }

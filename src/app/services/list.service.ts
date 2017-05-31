@@ -42,4 +42,10 @@ export class ListService {
      this.updateData();
    }
 
+
+   deleteList( index:number ) {
+     this.lists.splice(index, 1);
+     this.updateData();
+   }
+
 }

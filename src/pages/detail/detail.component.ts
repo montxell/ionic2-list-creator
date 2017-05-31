@@ -28,7 +28,18 @@ export class DetailComponent implements OnInit {
 
 
   updateItem( item:ListItem ) {
-    item.completed = !item.completed
+
+    item.completed = !item.completed;
+
+    let allMarked = true;
+    for ( let item of this.list.items ) {
+      if ( !item.completed ) {
+        allMarked = false;
+        break;
+      }
+    }
+
+    this.list.finished = allMarked;
 
     this._listService.updateData();
   }

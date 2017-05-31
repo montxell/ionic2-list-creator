@@ -6,7 +6,7 @@
 
 <ion-content padding>
 
-  <ion-card *ngFor="let list of _listService.lists; let i = index">
+  <ion-card *ngFor="let list of _listService.lists | pendings; let i = index">
 
     <ion-item color="dark" (click)="seeDetail(list, i)">
       <h2> {{ list.name }} </h2>

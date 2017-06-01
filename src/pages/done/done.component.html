@@ -1,10 +1,20 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Lista de finalizados (Done List)</ion-title>
+    <ion-title class="text-center">Lista de finalizados (Done List)</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-grid *ngIf="( _listService.lists | pendings:true ).length === 0">
+    <ion-row>
+      <ion-col class="text-center empty-box">
+        <ion-icon class="icon-big" ios="ios-ionic" md="md-ionic"></ion-icon>
+        <p> No existe ninguna lista </p>
+        <p> (There is no list) </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-card *ngFor="let list of _listService.lists | pendings:true; let i = index">
 

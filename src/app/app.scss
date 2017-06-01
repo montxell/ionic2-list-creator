@@ -34,20 +34,32 @@ ion-icon {
 
 // COMPONENT STYLES
 
-app-pendings {
+app-pendings, app-done {
+
   h2 {
       color: white !important;
+  }
+
+// Show "No existe ninguna lista" or "There is no list" in vertical and horitzonal
+  .empty-box {
+    color: #C7C7C7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+      p {
+        font-size: 30px;
+      }
+  }
+
+  .icon-big{
+    font-size: 100px;
   }
 }
 
 app-detail {
   ion-icon {
     margin-right: 0px !important;
-  }
-}
-
-app-done {
-  h2 {
-      color: white !important;
   }
 }

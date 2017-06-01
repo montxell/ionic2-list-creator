@@ -37,8 +37,26 @@
 
       </ion-item>
 
+      <ion-list *ngIf="show">
+
+        <ion-item (click)="seeDetail(list, i)"
+
+          *ngFor="let item of list.items | slice:2">
+
+          <ion-icon *ngIf="!item.completed" ios="ios-square-outline" md="md-square-outline"></ion-icon>
+          <ion-icon *ngIf="item.completed" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+          {{ item.name }}
+
+        </ion-item>
+
+      </ion-list>
+      
+<!-- TODO: write code to display just one list-->
       <ion-item class="text-center" *ngIf="list.items.length > 2">
-        <ion-icon color="primary" ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon>
+        <ion-icon (click)="show = !show">
+          <ion-icon *ngIf="!show" color="primary" ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon>
+          <ion-icon *ngIf="show" color="primary" ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon>
+        </ion-icon>
       </ion-item>
 
     </ion-list>

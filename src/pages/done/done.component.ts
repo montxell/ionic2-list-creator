@@ -12,6 +12,9 @@ import { DetailComponent } from '../detail/detail.component';
   templateUrl: 'done.component.html',
 })
 export class DoneComponent implements OnInit {
+
+  show:boolean = false;
+
   constructor( private _listService: ListService,
                private navCtrl: NavController) {  }
 

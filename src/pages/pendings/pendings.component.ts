@@ -12,6 +12,8 @@ import { DetailComponent } from '../detail/detail.component';
 })
 export class PendingsComponent implements OnInit {
 
+  show:boolean = false;
+
   constructor( private _listService: ListService,
                private navCtrl: NavController) {  }
 

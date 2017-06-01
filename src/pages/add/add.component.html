@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title> {{ listName | placeholder:'Nueva Lista (New List)' }}</ion-title>
+    <ion-title class="text-center"> {{ listName | placeholder:'Nueva Lista (New List)' }}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,6 +25,8 @@
         <ion-input (keyup.enter)="addItem()"
           type="text" [(ngModel)]="itemName" name="itemName"></ion-input>
       </ion-item>
+
+      <br><br>
 
       <button (click)="addItem()"
         ion-button class="button-block">

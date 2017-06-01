@@ -1,11 +1,38 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Lista de finalizados (Done List)</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <h1>No hay nada que ver... (Nothing to see...)</h1>
+  <ion-card *ngFor="let list of _listService.lists | pendings:true; let i = index">
+
+    <ion-item color="dark" (click)="seeDetail(list, i)">
+      <h2> {{ list.name }} </h2>
+      <ion-note item-right>
+        {{ list.items.length }} items
+      </ion-note>
+    </ion-item>
+
+    <ion-list>
+
+      <ion-item (click)="seeDetail(list, i)"
+
+        *ngFor="let item of list.items | slice:0:2">
+
+        <ion-icon *ngIf="!item.completed" ios="ios-square-outline" md="md-square-outline"></ion-icon>
+        <ion-icon *ngIf="item.completed" ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+        {{ item.name }}
+
+      </ion-item>
+
+      <ion-item class="text-center" *ngIf="list.items.length > 2">
+        <ion-icon color="primary" ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle"></ion-icon>
+      </ion-item>
+
+    </ion-list>
+
+  </ion-card>
 
 </ion-content>
